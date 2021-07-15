@@ -1,20 +1,17 @@
 #include <iostream>
 using namespace std;
-int main()
-{
-    int n, temp;
-    int counter = 0;
-    cin >> n;
-    if (n < 10)
-    {
-        n = n * 10;
+int main() {
+    int num;
+    cin >> num;
+
+    int next = num;
+    int cnt = 0;
+    while (true) {
+        cnt++;
+        next = (next%10)*10 + (next/10 + next%10)%10;
+
+        if (num == next)
+            break;
     }
-    temp = (n % 10) * 10 + ((n / 10) + (n % 10));
-    ++counter;
-    while (temp != n)
-    {
-        temp = (temp % 10) * 10 + ((temp / 10) + (temp % 10)) % 10;
-        ++counter;
-    }
-    cout << counter << endl;
+    cout << cnt << endl;
 }
