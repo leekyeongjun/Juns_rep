@@ -17,7 +17,6 @@ void isVPS(string s)
             isopened = true;
             opened++;
         }
-
         else if (s[i] == ')' && isopened)
         {
             opened--;
