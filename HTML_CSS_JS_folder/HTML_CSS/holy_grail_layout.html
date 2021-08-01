@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            .container{
+                display: flex;
+                flex-direction: column;
+            }
+            header{
+                border-bottom: 1px solid gray;
+                text-align: center;
+            }
+            footer{
+                border-top:1px solid gray;
+                padding: 20px;
+                text-align: center;
+            }
+            .content{
+                display:flex;
+            }
+            .content nav{
+                border-right:1px solid gray;
+            }
+            .content aside{
+                border-left:1px solid gray;
+            }
+            nav,aside{
+                flex-basis:150px;
+                flex-shrink: 0;
+            }
+            main{
+                padding:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>coding</h1>
+            </header>
+            <section class="content">
+                <nav>
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                        <li>JS</li>
+                    </ul>
+                </nav>
+                <main>
+                    Lorem ipsum dolor sit amet consectetur, 
+                    adipisicing elit. Nulla vero incidunt fugiat suscipit rerum praesentium quia laborum deleniti enim quis doloremque, 
+                    veritatis deserunt numquam itaque, ducimus alias placeat earum tempora!
+                </main>
+                <aside>
+                    AD
+                </aside>
+            </section>
+            <footer>
+                <a href="http://naver.com">homepage</a>
+            </footer>
+        </div>
+    </body>
+</html>
