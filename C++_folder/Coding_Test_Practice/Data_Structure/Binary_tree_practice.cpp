@@ -22,9 +22,7 @@ class Node{
 
 void Show_headFirst(Node* node){
     if(node == NULL){
-        
         cout << endl;
-        return;
     }
     else{
         cout << node->GetData() << " ";
