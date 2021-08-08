@@ -67,6 +67,7 @@ void Show_tailFirst(Node* node){
 
 int main()
 {
+	cout << endl;
     int n, dg;
     cin >>n;
     Node rootNode;
