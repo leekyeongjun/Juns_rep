@@ -15,7 +15,7 @@ int main()
     cout << "<";
     while(true)
     {
-        
+ 
         for(int j =0; j<index-1; j++)
         {
             temp = nums.front();
