@@ -9,9 +9,7 @@ int main(){
 	string name;
 	
 	for(int i = 0; i<input_nums; i++){
-		
 		cin >> name;
-		
 		for(int j = 0; j<students.size(); j++){
 			if(name.compare(students[j])==0){
 				students.erase(j);
