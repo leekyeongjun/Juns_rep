@@ -8,27 +8,33 @@ struct node{
     char right;
 };
  
-struct node arr[27];
+node arr[27];
  
 void preOrder(char root){
-    if(root == '.')
+    if(root == '.'){
         return;
+    }
+
     cout << root;
     preOrder(arr[root].left);
     preOrder(arr[root].right);
 }
  
 void inOrder(char root){
-    if(root == '.')
+    if(root == '.'){
         return;
+    }
+
     inOrder(arr[root].left);
     cout << root;
     inOrder(arr[root].right);
 }
  
 void postOrder(char root){
-    if(root == '.')
+    if(root == '.'){
         return;
+    }
+
     postOrder(arr[root].left);
     postOrder(arr[root].right);
     cout << root;

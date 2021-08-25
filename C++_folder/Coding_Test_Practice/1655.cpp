@@ -1,27 +1,32 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-
+#include <list>
+#include <string>
+#include <queue>
 using namespace std;
-
-int main()
-{
-    int n,k,size;
+int main() {
+    priority_queue<int> maxHeap;
+    priority_queue<int, vector<int>, greater<int> > minHeap;
+    int n;
     cin >> n;
-    vector<int> arr;
-    for(int i =0; i< n; i++){
-        cin >> k;
-        arr.push_back(k);
-        size = arr.size();
-        sort(arr.begin(),arr.end());
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
         
-        if(size%2 == 0)
-        {
-            cout << arr[size/2-1] << endl;
+        if (maxHeap.size() == minHeap.size()) {
+            maxHeap.push(num);
         }
-        else
-        {
-            cout << arr[size/2] << endl;
+        else {
+            minHeap.push(num);
         }
+        if (!minHeap.empty() && !maxHeap.empty() && minHeap.top() < maxHeap.top()) {
+            int a = maxHeap.top(), b = minHeap.top();
+            maxHeap.pop();
+            minHeap.pop();
+            maxHeap.push(b);
+            minHeap.push(a);
+        }
+        cout << maxHeap.top() << '\n';
     }
+    
 }
