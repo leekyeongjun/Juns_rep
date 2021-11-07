@@ -34,4 +34,3 @@ int main(){
 	for(int i = 0; i<limit; i++){
 		cout << vec[i].first <<endl;
 	}
-}
