@@ -13,7 +13,13 @@ int main()
 	}
 
 	int m,n;
-	int sum,cnt,min = 0;
+	int sum,cnt,min;
+
+	sum = 0;
+	cnt = 0;
+	min = 0;
+
+
 	scanf("%d %d", &m, &n );
 
 	for(int i = 0; i<101; i++){
