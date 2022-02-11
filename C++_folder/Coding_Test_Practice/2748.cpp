@@ -3,16 +3,19 @@
 using namespace std;
 
 
-int fi(int a){
-	if(a <= 1){
-		return a;
-	}
-	return fi(a-1)+ fi(a-2);
-}
-
 int main()
 {
 	int n;
+	long long * f;
+
 	cin >> n;
-	cout << fi(n);
+	f = new long long[n+1];
+
+	f[0] = 0; f[1] = 1;
+	for(int i = 2; i<=n; i++){
+		f[i] = f[i-1]+ f[i-2];
+	}
+
+	cout << f[n];
+	delete[] f;
 }
