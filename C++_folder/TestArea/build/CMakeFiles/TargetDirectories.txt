@@ -1,0 +1,3 @@
+/data/data/com.termux/files/home/storage/Juns_rep/C++_folder/TestArea/build/CMakeFiles/Test.dir
+/data/data/com.termux/files/home/storage/Juns_rep/C++_folder/TestArea/build/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/storage/Juns_rep/C++_folder/TestArea/build/CMakeFiles/rebuild_cache.dir
