@@ -1,67 +1,59 @@
+#include <functional>
 #include <iostream>
-#include <memory.h>
-
+#include <set>
+#include <string>
+#include <vector>
+#include <queue>
 using namespace std;
 
+set<string> A;
+vector<string> B;
 
-int Farm[60][60];
-int ans = 0;
-int ga,se,ra;
-void DFS(int g, int s){
-	Farm[g][s] = ans + 2;
-	int dx[] = {0,0,1,-1};
-	int dy[] = {1,-1,0,0};
+priority_queue<string, vector<string>, greater<string>> ans;
 
-	for(int i = 0; i< 4; i++){
-		int ng = g+dx[i];
-		int ns = s+dy[i];
-		if(Farm[ng][ns] == 1 && ng >= 0 && ns >= 0 && ng < ga && ng < se){
-			DFS(ng,ns);
+int main()
+{
+	int N, M;
+	cin >> N >> M;
+
+	if(N <= M){
+		for(int i= 0 ; i<N; i++){
+			string c;
+			cin >> c;
+			B.push_back(c);	
+		}
+		for(int j=0; j<M; j++){
+			string d;
+			cin >> d;
+			A.insert(d);
+		}
+	}
+	else{
+		for(int i= 0 ; i<N; i++){
+			string c;
+			cin >> c;
+			A.insert(c);	
+		}
+		for(int j=0; j<M; j++){
+			string d;
+			cin >> d;
+			B.push_back(d);
+		}
+	}
+	int sz = B.size();
+	for(int i = 0; i < sz; i++){
+		set<string>::iterator it;
+		it = A.find(B[i]);
+		if(it != A.end()){
+			ans.push(*it);
 		}
 	}
 
-}
-
-int main(){
-	int T;
-	cin >> T;
-	for(int I = 0; I< T; I++){
-		ans = 0;
-		memset(Farm, 0, sizeof(Farm));
-		ga = 0;
-		se = 0;
-		ra = 0;
-		cin >> ga >> se >> ra;
-		for(int i = 0 ; i < ra; i++){
-			int rga, rse;
-			cin >> rga >> rse;
-			Farm[rse][rga] = 1;
-		}
-
-		for(int i = 0 ; i < se; i++){
-			for(int j= 0 ; j<ga; j++){
-				cout << Farm[i][j]<< " ";
-			}
-			cout << '\n';
-		}
-		cout << '\n';
-		
-		for(int i = 0 ; i <se; i++){
-			for(int j= 0 ; j<ga; j++){
-				if(Farm[i][j] == 1){
-					DFS(i,j);
-					ans++;
-				}
-			}
-		}
-
-
-		for(int i = 0 ; i < se; i++){
-			for(int j= 0 ; j<ga; j++){
-				cout << Farm[i][j]<< " ";
-			}
-			cout << '\n';
-		}
-		cout << ans << '\n';
+	
+	while(!ans.empty()){
+		cout << ans.top() << '\n';
+		ans.pop();
 	}
 }
+
+
