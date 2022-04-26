@@ -155,11 +155,15 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
   /data/data/com.termux/files/usr/include/c++/v1/__bsd_locale_fallbacks.h \
   /data/data/com.termux/files/usr/include/c++/v1/bitset \
   /data/data/com.termux/files/usr/include/c++/v1/__bit_reference \
-  /data/data/com.termux/files/usr/include/c++/v1/queue \
-  /data/data/com.termux/files/usr/include/c++/v1/deque \
-  /data/data/com.termux/files/usr/include/c++/v1/__split_buffer \
-  /data/data/com.termux/files/usr/include/c++/v1/vector
+  /data/data/com.termux/files/usr/include/c++/v1/map \
+  /data/data/com.termux/files/usr/include/c++/v1/__tree \
+  /data/data/com.termux/files/usr/include/c++/v1/__node_handle \
+  /data/data/com.termux/files/usr/include/c++/v1/optional
 
+
+/data/data/com.termux/files/usr/include/c++/v1/optional:
+
+/data/data/com.termux/files/usr/include/c++/v1/__tree:
 
 /data/data/com.termux/files/usr/include/c++/v1/istream:
 
@@ -183,13 +187,13 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 
 /data/data/com.termux/files/usr/include/c++/v1/cstdio:
 
+/data/data/com.termux/files/usr/include/c++/v1/map:
+
 /data/data/com.termux/files/usr/include/c++/v1/functional:
 
 /data/data/com.termux/files/usr/include/semaphore.h:
 
 /data/data/com.termux/files/usr/include/linux/sched.h:
-
-/data/data/com.termux/files/usr/include/c++/v1/queue:
 
 /data/data/com.termux/files/usr/include/c++/v1/cstdarg:
 
@@ -411,9 +415,9 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 
 /data/data/com.termux/files/usr/include/sys/types.h:
 
-/data/data/com.termux/files/usr/include/c++/v1/vector:
-
 /data/data/com.termux/files/usr/include/linux/time.h:
+
+/data/data/com.termux/files/usr/include/c++/v1/__node_handle:
 
 /data/data/com.termux/files/usr/include/c++/v1/__nullptr:
 
@@ -424,8 +428,6 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 /data/data/com.termux/files/usr/include/c++/v1/stddef.h:
 
 /data/data/com.termux/files/usr/include/stdio.h:
-
-/data/data/com.termux/files/usr/include/c++/v1/__split_buffer:
 
 /data/data/com.termux/files/usr/include/bits/wchar_limits.h:
 
@@ -450,8 +452,6 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 /data/data/com.termux/files/usr/include/android/api-level.h:
 
 /data/data/com.termux/files/usr/include/asm-generic/siginfo.h:
-
-/data/data/com.termux/files/usr/include/c++/v1/deque:
 
 /data/data/com.termux/files/usr/include/c++/v1/__bsd_locale_fallbacks.h:
 
