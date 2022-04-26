@@ -1,59 +1,37 @@
-#include <functional>
 #include <iostream>
-#include <set>
-#include <string>
-#include <vector>
 #include <queue>
+
 using namespace std;
+struct compare{
+	bool operator()(pair<int,int> a, pair<int,int> b){
+		if(a.first == b.first)
+			return a.second > b.second;
+		return a.first > b.first;
+	}
+};
 
-set<string> A;
-vector<string> B;
-
-priority_queue<string, vector<string>, greater<string>> ans;
+priority_queue<pair<int,int>, vector<pair<int,int>>, compare> pq;
 
 int main()
 {
-	int N, M;
-	cin >> N >> M;
-
-	if(N <= M){
-		for(int i= 0 ; i<N; i++){
-			string c;
-			cin >> c;
-			B.push_back(c);	
+	int N;
+	cin >> N;
+	for(int i = 0 ; i<N; i++){
+		int a;
+		cin >> a;
+		if(a != 0){
+			pq.push({abs(a), a});
 		}
-		for(int j=0; j<M; j++){
-			string d;
-			cin >> d;
-			A.insert(d);
-		}
-	}
-	else{
-		for(int i= 0 ; i<N; i++){
-			string c;
-			cin >> c;
-			A.insert(c);	
-		}
-		for(int j=0; j<M; j++){
-			string d;
-			cin >> d;
-			B.push_back(d);
-		}
-	}
-	int sz = B.size();
-	for(int i = 0; i < sz; i++){
-		set<string>::iterator it;
-		it = A.find(B[i]);
-		if(it != A.end()){
-			ans.push(*it);
+		else{
+			if(pq.empty()){
+				cout << "0" << '\n';
+			}
+			else{
+				cout << pq.top().second << '\n';
+				pq.pop();
+			}
 		}
 	}
 
-	
-	while(!ans.empty()){
-		cout << ans.top() << '\n';
-		ans.pop();
-	}
+
 }
-
-
