@@ -1,40 +1,28 @@
 #include <iostream>
-#include <map>
-#include <cstdlib>
-#include <stdexcept>
-#include <string>
 
 using namespace std;
 
-map<int, string> m;
+int arr[11];
 
+int DP(int n){
+	if(n == 1) return 1;
+	else if(n == 2) return 2;
+	else if(n == 3) return 4;
+
+	if(arr[n] != 0) return arr[n];
+	else{
+		arr[n] = DP(n-1) + DP(n-2) + DP(n-3);
+		return arr[n];
+	}
+}
 int main()
 {
-	int N, K;
-	cin >> N >> K;
+	int T;
+	cin >> T;
 
-	for(int i = 0 ; i < N; i++){
-		string s;
-		cin >> s;
-		m.insert({i+1, s});
-	}
-	
-	for(int i = 0 ; i<K; i++){
-		string b;
-		map<int,string>::iterator it;
-		cin >> b;
-		try{
-			int n = stoi(b);
-			it = m.find(n);
-			if(it != m.end()){
-				cout << it->second << '\n';
-			}
-		} catch(const std::invalid_argument&){
-			for(it = m.begin(); it != m.end(); it++){
-				if(it->second.compare(b)==0){
-					cout << it->first << '\n';
-				}
-			}
-		}
+	for(int i = 0 ; i < T ; i++){
+		int a;
+		cin >> a;
+		cout << DP(a) << '\n';
 	}
 }
