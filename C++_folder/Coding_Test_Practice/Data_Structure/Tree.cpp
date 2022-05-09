@@ -41,7 +41,7 @@ void Preorder(Node<T>* node)
 }
 
 template <typename T>
-void Inorder(node<T>* node)
+void Inorder(Node<T>* node)
 {
     if(node == nullptr)
         return;
@@ -49,6 +49,7 @@ void Inorder(node<T>* node)
     cout << node -> GetValue() << " ";
     Inorder(node->GetRight());
 }
+
 template <typename T>
 void Postorder(Node<T>* node) 
 { 

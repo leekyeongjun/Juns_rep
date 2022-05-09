@@ -170,30 +170,3 @@ Node *find(char *word){
 	return NULL;
 }
 
-int main(){
-	/*
-	head = new Node;
-	haed -> data = "Tuesday";
-	head -> next = NULL;
-
-	Node *q = new Node;
-	q-> data = "Thursday";
-	q-> next = NULL;
-	head -> next = q;
-
-	q = new Node;
-	q-> data = "Monday";
-	q-> next = head;
-	head = q;
-
-	Node *p = head;
-	while (P!=NULL){
-		printf("%s\n", p->data);
-		p = p->next;
-	}
-	*/
-
-	
-
-}
-
