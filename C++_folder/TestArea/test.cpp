@@ -1,17 +1,34 @@
 #include <iostream>
-#include <math.h>
 #include <queue>
+#include <string>
+
 using namespace std;
 
-int x,y,w,h;
-priority_queue<int, vector<int>, greater<int>> q;
 int main()
 {
-	cin >> x >> y >> w >> h;
-	q.push(x);
-	q.push(y);
-	q.push(abs(w-x));
-	q.push(abs(h-y));
+	while(true){
+		string a;
+		cin >> a;
+		bool pal = true;
 
-	cout << q.top() << '\n';
+		if(a == "0") break;
+		queue<int> f,b;	
+		for(int i = 0 ; i<a.size(); i++) f.push(a[i]-'0');
+		for(int i = a.size()-1; i >0; i--) b.push(a[i]-'0');
+	
+		while(!f.empty() && !b.empty()){
+			int ft = f.front();
+			int bt = b.front();
+			if(ft != bt){
+				pal = false;
+				break;
+			}
+			f.pop();
+			b.pop();
+		}
+		if(pal) cout << "yes" << '\n';
+		else cout << "no" << '\n';
+	}
+
+
 }
