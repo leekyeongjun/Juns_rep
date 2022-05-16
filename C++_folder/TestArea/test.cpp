@@ -1,34 +1,82 @@
 #include <iostream>
 #include <queue>
-#include <string>
 
 using namespace std;
 
-int main()
-{
-	while(true){
-		string a;
-		cin >> a;
-		bool pal = true;
+int N, M, V;
 
-		if(a == "0") break;
-		queue<int> f,b;	
-		for(int i = 0 ; i<a.size(); i++) f.push(a[i]-'0');
-		for(int i = a.size()-1; i >0; i--) b.push(a[i]-'0');
-	
-		while(!f.empty() && !b.empty()){
-			int ft = f.front();
-			int bt = b.front();
-			if(ft != bt){
-				pal = false;
-				break;
-			}
-			f.pop();
-			b.pop();
+class Node{
+	public:
+	int data;
+	priority_queue<int, vector<int>, greater<int>> edge;	
+	bool visit = false;
+};
+
+Node arr[1010];
+Node arr2[1010];
+queue<Node> q;
+
+void DFS(int id){
+	//visit
+	cout << arr[id].data << " ";
+	arr[id].visit = true;
+	//move
+	while(!arr[id].edge.empty()){
+		int tp = arr[id].edge.top();
+		if(arr[tp].visit == true){
+			arr[id].edge.pop();
 		}
-		if(pal) cout << "yes" << '\n';
-		else cout << "no" << '\n';
+		else{
+			DFS(tp);
+		}
+	}
+}
+
+void BFS(){
+	Node tp = q.front();
+	q.pop();
+	if(arr2[tp.data].visit ==false){
+		arr2[tp.data].visit = true;
+		cout << tp.data << " ";
+	}
+	while(!tp.edge.empty()){
+		int ntp = tp.edge.top();
+		tp.edge.pop();
+		if(arr2[ntp].visit == false){
+			q.push(arr2[ntp]);
+		}
+	}
+}
+
+int main()
+{	
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+	cin >> N >> M >> V;
+
+	for(int i = 1 ; i<=N; i++){
+		arr[i].data = i;
+		arr2[i].data = i;
 	}
 
+	for(int i=1; i<=M; i++){
+		int a, b;
+		cin >> a >> b;
+		arr[a].edge.push(b);
+		arr[b].edge.push(a);
+		arr2[a].edge.push(b);
+		arr2[b].edge.push(a);
+	}
+	
 
+	DFS(V);
+	cout << '\n';
+
+	q.push(arr2[V]);
+	while(!q.empty()){
+		BFS();
+	}
+	cout << '\n';
 }
