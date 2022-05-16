@@ -2,81 +2,92 @@
 #include <queue>
 
 using namespace std;
+int se,ga;
 
-int N, M, V;
+typedef struct{
+	int s, g;
+}pos;
 
-class Node{
-	public:
-	int data;
-	priority_queue<int, vector<int>, greater<int>> edge;	
-	bool visit = false;
-};
+int GRID[1010][1010];
+int cnt = 0;
+queue<pos> q; 
 
-Node arr[1010];
-Node arr2[1010];
-queue<Node> q;
-
-void DFS(int id){
+void DFS(){
 	//visit
-	cout << arr[id].data << " ";
-	arr[id].visit = true;
-	//move
-	while(!arr[id].edge.empty()){
-		int tp = arr[id].edge.top();
-		if(arr[tp].visit == true){
-			arr[id].edge.pop();
-		}
-		else{
-			DFS(tp);
-		}
-	}
-}
-
-void BFS(){
-	Node tp = q.front();
+	pos c = q.front();
 	q.pop();
-	if(arr2[tp.data].visit ==false){
-		arr2[tp.data].visit = true;
-		cout << tp.data << " ";
-	}
-	while(!tp.edge.empty()){
-		int ntp = tp.edge.top();
-		tp.edge.pop();
-		if(arr2[ntp].visit == false){
-			q.push(arr2[ntp]);
+	//cout << "[CURRENT POS] : " << c.g << "," << c.s << '\n';
+	//traverse
+	int Dse[4] = {1,-1,0,0};
+	int Dga[4] = {0,0,1,-1};
+	for(int k = 0 ; k<4; k++){		
+		int ns = c.s+Dse[k];
+		int ng = c.g+Dga[k];
+
+		//cout << "checking :" << ng << "," << ns << "\n";
+		if(ns >= 0 && ng >= 0 && GRID[ns][ng] == 0){
+			GRID[ns][ng] = GRID[c.s][c.g] +1;
+			cnt = GRID[ns][ng];
+			q.push({ns,ng});
 		}
+		/*
+		for(int i=0; i<se; i++){
+			for(int j=0; j<ga; j++){
+				cout << GRID[i][j] << " ";
+			}	
+			cout << '\n';
+		}
+		cout << "==========================" << '\n';
+		*/
 	}
 }
 
-int main()
-{	
+int main(){
+
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	cin >> N >> M >> V;
+	memset(GRID, -1, sizeof(GRID));
+	cin >> ga >> se;
+	bool easy = true;
 
-	for(int i = 1 ; i<=N; i++){
-		arr[i].data = i;
-		arr2[i].data = i;
+	for(int i=0; i<se; i++){
+		for(int j=0; j<ga; j++){
+			cin >> GRID[i][j];
+		}
 	}
-
-	for(int i=1; i<=M; i++){
-		int a, b;
-		cin >> a >> b;
-		arr[a].edge.push(b);
-		arr[b].edge.push(a);
-		arr2[a].edge.push(b);
-		arr2[b].edge.push(a);
+	for(int i=0; i<se; i++){
+		for(int j=0; j<ga; j++){
+			if(GRID[i][j] == 1){
+				q.push({i,j});
+			}
+		}
 	}
-	
-
-	DFS(V);
-	cout << '\n';
-
-	q.push(arr2[V]);
 	while(!q.empty()){
-		BFS();
+		DFS();
 	}
-	cout << '\n';
+	/*	
+	cout << " ========================== " << '\n';
+	for(int i=0; i<se; i++){
+		for(int j=0; j<ga; j++){
+			cout << GRID[i][j] << " ";
+		}
+		cout << '\n';
+	}
+	*/
+	for(int i=0; i<se; i++){
+		for(int j=0; j<ga; j++){
+			if(GRID[i][j] == 0){
+				cout << -1 << '\n';
+				return 0;
+			}
+		}
+	}
+	if(cnt == 0 ){cout << cnt;}
+	else{
+		cout << cnt-1 << '\n';
+	}
 }
+
+
