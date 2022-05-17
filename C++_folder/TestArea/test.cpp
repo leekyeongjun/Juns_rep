@@ -24,6 +24,10 @@ int main(){
 	cout.tie(NULL);
 
 	cin >> N >> M;
+	if(M == 0){
+		cout << N << '\n';
+		return 0;
+	}
 
 	for(int i = 0 ; i < M; i++){
 		int a, b;
@@ -56,11 +60,11 @@ int main(){
 		}
 	}
 
-	/*	cout << "init_data : " << init_data << '\n';
+	cout << "init_data : " << init_data << '\n';
 	for(int i = 1; i<= N; i++){
 		cout << i << " : " << nddt[i] << '\n';
 	}
-	*/
+
 
 	sort(nddt, nddt+N);
 	cout << nddt[N] << '\n';
