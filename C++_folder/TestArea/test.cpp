@@ -2,92 +2,55 @@
 #include <queue>
 
 using namespace std;
-int se,ga;
 
-typedef struct{
-	int s, g;
-}pos;
+class Node{
+	public:
+	int data = 0 ;
+	queue<int> edge;
+};
 
-int GRID[1010][1010];
-int cnt = 0;
-queue<pos> q; 
+int init_data = 1;
 
-void DFS(){
-	//visit
-	pos c = q.front();
-	q.pop();
-	//cout << "[CURRENT POS] : " << c.g << "," << c.s << '\n';
-	//traverse
-	int Dse[4] = {1,-1,0,0};
-	int Dga[4] = {0,0,1,-1};
-	for(int k = 0 ; k<4; k++){		
-		int ns = c.s+Dse[k];
-		int ng = c.g+Dga[k];
+queue<Node> q;
 
-		//cout << "checking :" << ng << "," << ns << "\n";
-		if(ns >= 0 && ng >= 0 && GRID[ns][ng] == 0){
-			GRID[ns][ng] = GRID[c.s][c.g] +1;
-			cnt = GRID[ns][ng];
-			q.push({ns,ng});
-		}
-		/*
-		for(int i=0; i<se; i++){
-			for(int j=0; j<ga; j++){
-				cout << GRID[i][j] << " ";
-			}	
-			cout << '\n';
-		}
-		cout << "==========================" << '\n';
-		*/
-	}
-}
+int N, M;
+Node nd[1010];
 
 int main(){
-
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	memset(GRID, -1, sizeof(GRID));
-	cin >> ga >> se;
-	bool easy = true;
+	cin >> N >> M;
 
-	for(int i=0; i<se; i++){
-		for(int j=0; j<ga; j++){
-			cin >> GRID[i][j];
-		}
+	for(int i = 0 ; i < M; i++){
+		int a, b;
+		cin >> a >> b;
+
+		nd[a].edge.push(b);
+		nd[b].edge.push(a);
 	}
-	for(int i=0; i<se; i++){
-		for(int j=0; j<ga; j++){
-			if(GRID[i][j] == 1){
-				q.push({i,j});
+
+	for(int i = 0 ; i< N; i++){
+		if(nd[i].data == 0 && !nd[i].edge.empty()){
+			nd[i].data = init_data;
+			q.push(nd[i]);
+			while(!q.empty()){
+				Node cur = q.front();
+				q.pop();
+				while(!cur.edge.empty()){
+					if(nd[cur.edge.front()].data == 0){
+						q.push(nd[cur.edge.front()]);
+						nd[cur.edge.front()].data = init_data;
+					}
+					cur.edge.pop();
+				}
 			}
+			init_data ++;
 		}
 	}
-	while(!q.empty()){
-		DFS();
-	}
-	/*	
-	cout << " ========================== " << '\n';
-	for(int i=0; i<se; i++){
-		for(int j=0; j<ga; j++){
-			cout << GRID[i][j] << " ";
-		}
-		cout << '\n';
-	}
-	*/
-	for(int i=0; i<se; i++){
-		for(int j=0; j<ga; j++){
-			if(GRID[i][j] == 0){
-				cout << -1 << '\n';
-				return 0;
-			}
-		}
-	}
-	if(cnt == 0 ){cout << cnt;}
-	else{
-		cout << cnt-1 << '\n';
-	}
+
+	cout << init_data << '\n';
+
 }
-
 
