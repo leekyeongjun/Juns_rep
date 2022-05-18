@@ -1,64 +1,61 @@
-#include <algorithm>
 #include <iostream>
 #include <queue>
+#include <memory.h>
 
 using namespace std;
+int GRID[51][51];
 
-class Node{
-	public:
-	int data = 0 ;
-	queue<int> edge;
-};
+typedef struct{
+	int s,g;
+}pos;
 
-int init_data = 1;
-int ans = 0;
-queue<Node> q;
+int main()
+{
+	while(1){
+		memset(GRID, 0, sizeof(GRID));
+		int g, s;
+		cin >> g >> s ;
+		if(g == 0 && s == 0) break;
+		queue<pos> q;
+		int cnt = 2;
 
-int N, M;
-Node nd[1010];
-int nddt[1010];
+		for(int i=0; i<s; i++){
+			for(int j=0; j<g; j++){
+				cin >> GRID[i][j];
+			}
+		}
 
-int main(){
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-
-	cin >> N >> M;
-	for(int i = 0 ; i < M; i++){
-		int a, b;
-		cin >> a >> b;
-		nd[a].edge.push(b);
-		nd[b].edge.push(a);
-	}
-
-	for(int i = 1 ; i<= N; i++){
-		if(nd[i].data == 0 && !nd[i].edge.empty()){
-			nd[i].data = init_data;
-			q.push(nd[i]);
-			while(!q.empty()){
-				Node cur = q.front();
-				q.pop();
-				while(!cur.edge.empty()){
-					if(nd[cur.edge.front()].data == 0){
-						q.push(nd[cur.edge.front()]);
-						nd[cur.edge.front()].data = init_data;
+		for(int i=0; i<s; i++){
+			for(int j=0; j<g; j++){
+				if(GRID[i][j] == 1){
+					q.push({i,j});
+					GRID[i][j] = cnt;
+					while(!q.empty()){
+						pos cp = q.front();
+						q.pop();
+						int ds[8] = {-1,1,0,0,-1,-1,1,1};
+						int dg[8] = {0,0,1,-1,1,-1,-1,1};
+						for(int k = 0; k<8; k++){
+							int ns = cp.s+ds[k];
+							int ng = cp.g+dg[k];
+							if(ns >= 0 && ng >= 0 && GRID[ns][ng] == 1){
+								GRID[ns][ng] = cnt;
+								q.push({ns,ng});
+							}
+						}
 					}
-					cur.edge.pop();
+				cnt++;
 				}
 			}
-			init_data ++;
 		}
-	}
-
-	for(int i = 1 ; i<=N; i++){
-		int c = nd[i].data;
-		nddt[c]++;
-	}
-	for(int i = 0; i<1010; i++){
-		if(nddt[i] != 0){
-			ans += nddt[i];
+/*
+		for(int i=0; i<s; i++){
+			for(int j=0; j<g; j++){
+				cout << GRID[i][j] << " ";
+			}
+			cout << '\n';
 		}
-	}
-	cout << ans << '\n';
+*/
+		cout <<  cnt-2 << '\n';
+	}	
 }
-
