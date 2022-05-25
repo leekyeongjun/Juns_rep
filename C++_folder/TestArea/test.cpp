@@ -1,92 +1,63 @@
 #include <iostream>
 #include <queue>
-#include <vector>
 #include <memory.h>
-#include <algorithm>
 
 using namespace std;
-
 class pos{
 	public:
-	int s,g;
-
+		int s,g;
 };
 
-int GRID[10][10];
-int G[10][10];
+int GRID[301][301];
+int I;
 
-pos wall[100];
-int posn = 0;
+int dg[8] = {2,2,1,1,-2,-2,-1,-1};
+int ds[8] = {1,-1,2,-2,1,-1,2,-2};
 
-int N,M;
 
-priority_queue<int> pq;
-queue<pos> q;
 
 int main()
-{
-	memset(GRID, -1, sizeof(GRID));
-	cin >> N >> M;
-	for(int i = 0 ; i<N; i++){
-		for(int j =0; j<M; j++){
-			cin >> GRID[i][j];
-			if(GRID[i][j] == 0){
-				wall[posn] = {i,j};
-				posn++;
+{	
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	int N;
+	cin >> N;
+
+	for(int n = 0; n<N; n++){
+		memset(GRID, -1, sizeof(GRID));
+		queue<pos> q;
+		cin >> I;
+		for(int i = 0 ; i<I; i++){
+			for(int j=0; j<I; j++){
+				GRID[i][j] = 0;
 			}
 		}
-	}
 
-	//1, set walls
-	for(int i=0; i<posn; i++){
-		for(int j=0; j<i; j++){
-			for(int k=0; k<j; k++){
-				int dg[4] = {1,-1,0,0};
-				int ds[4] = {0,0,1,-1};
+		pos cp,dp;
+		cin >> cp.s >> cp.g >> dp.s >> dp.g;
+		
+		GRID[cp.s][cp.g] = 1;
 
-				memcpy(G, GRID, sizeof(GRID));
-				pos p1 = wall[i];
-				pos p2 = wall[j];
-				pos p3 = wall[k];
-				G[p1.s][p1.g] = 1;
-				G[p2.s][p2.g] = 1;
-				G[p3.s][p3.g] = 1;
+		q.push(cp);
 
-	//2. DO BFS.
-				for(int n = 0; n<N; n++){
-					for(int m=0; m<M; m++){
-						if(G[n][m] == 2) q.push({n,m});				
-					}
+		while(!q.empty()){
+			pos cur = q.front();
+			q.pop();
+			if(cur.s == dp.s && cur.g == dp.g) break;
+
+			for(int i=0; i<8; i++){
+				pos np = {cur.g+dg[i], cur.s+ds[i]};
+				if(np.g >= 0 && np.s >= 0 && GRID[np.s][np.g] == 0){
+					GRID[np.s][np.g] = GRID[cur.s][cur.g] + 1;
+					q.push(np);
 				}
+			}
+		}
 
-				while(!q.empty()){
-					pos c = q.front();
-					q.pop();
-					for(int p=0; p<4; p++){
-						pos np;
-						np.s = c.s+ds[p];
-						np.g = c.g+dg[p];
-						if(np.s >= 0 && np.g >= 0 && G[np.s][np.g] == 0){
-							G[np.s][np.g] = 2;
-							q.push(np);
-						}
-					}
-				}
-//3.count and add to pq.
-				int cnt=0;
-				for(int n=0; n<N; n++){
-					for(int m=0; m<M; m++){
-						if(G[n][m] ==0){
-							cnt++;
-						}
-					}
-				}
-				pq.push(cnt);
-			}	
-		}	
-	}
-
-//4. print it.
-	cout << pq.top() << '\n';
-
+		cout << GRID[dp.s][dp.g] -1 << '\n';
+		}
 }
+
+
+
