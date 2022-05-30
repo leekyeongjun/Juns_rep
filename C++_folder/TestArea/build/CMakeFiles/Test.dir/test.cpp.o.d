@@ -152,9 +152,4 @@ CMakeFiles/Test.dir/test.cpp.o: \
   /data/data/com.termux/files/usr/include/c++/v1/cstdarg \
   /data/data/com.termux/files/usr/include/c++/v1/__bsd_locale_fallbacks.h \
   /data/data/com.termux/files/usr/include/c++/v1/bitset \
-  /data/data/com.termux/files/usr/include/c++/v1/__bit_reference \
-  /data/data/com.termux/files/usr/include/c++/v1/queue \
-  /data/data/com.termux/files/usr/include/c++/v1/deque \
-  /data/data/com.termux/files/usr/include/c++/v1/__split_buffer \
-  /data/data/com.termux/files/usr/include/c++/v1/vector \
-  /data/data/com.termux/files/usr/include/memory.h
+  /data/data/com.termux/files/usr/include/c++/v1/__bit_reference
