@@ -1,51 +1,33 @@
 #include <iostream>
 using namespace std;
 
-int ppl[51];
-int grid[51][51];
-
-int N, M, K;
-int cnt = 0;
-
+int T;
+int A,B,C;
+// 5min = 300sec;
+// 1min = 60sec;
+// 10sec;
 int main()
 {
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-
-	cin >> N >> M;
-	cin >> K;
-
-	for(int i = 0 ; i<K; i++){
-		int a;
-		cin >> a;
-		ppl[a] = 1;
+	A = 0; B = 0; C = 0;
+	cin >> T;	
+	while(T-300>=0){
+		A ++;
+		T -= 300;
+	}
+	while(T-60 >= 0){
+		B ++;
+		T-= 60;
+	}
+	while(T-10 >= 0){
+		C ++;
+		T -= 10;
 	}
 
-	int b;
-	for(int i = 0 ; i<M; i++){
-		bool t = false;
-		cin >> b;
-		for(int j=0; j<b; j++){
-			int cur;
-			cin >> cur;
-			grid[i][j] = cur;
-			if(ppl[cur] == 1){
-				t = true;
-			}
-		}
-		if(t){
-			for(int k = 0; k<b; k++){
-				ppl[grid[i][k]] = 1;
-			}
-		}		
+	if(T != 0){
+		cout << -1 << '\n';
+		return 0;
 	}
-
-	for(int i=0; i<M; i++){
-		if(ppl[grid[i][0]]==0){
-			cnt++;
-		}
+	else{
+		cout << A << " " << B << " " << C << '\n';
 	}
-
-	cout << cnt << '\n';
 }
