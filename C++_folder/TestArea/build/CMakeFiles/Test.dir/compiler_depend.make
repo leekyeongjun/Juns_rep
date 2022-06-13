@@ -19,11 +19,11 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
   /data/data/com.termux/files/usr/include/stdio.h \
   /data/data/com.termux/files/usr/include/sys/types.h \
   /data/data/com.termux/files/usr/include/c++/v1/stddef.h \
-  /data/data/com.termux/files/usr/lib/clang/14.0.3/include/stddef.h \
-  /data/data/com.termux/files/usr/lib/clang/14.0.3/include/__stddef_max_align_t.h \
+  /data/data/com.termux/files/usr/lib/clang/14.0.4/include/stddef.h \
+  /data/data/com.termux/files/usr/lib/clang/14.0.4/include/__stddef_max_align_t.h \
   /data/data/com.termux/files/usr/include/c++/v1/__nullptr \
   /data/data/com.termux/files/usr/include/c++/v1/stdint.h \
-  /data/data/com.termux/files/usr/lib/clang/14.0.3/include/stdint.h \
+  /data/data/com.termux/files/usr/lib/clang/14.0.4/include/stdint.h \
   /data/data/com.termux/files/usr/include/stdint.h \
   /data/data/com.termux/files/usr/include/bits/wchar_limits.h \
   /data/data/com.termux/files/usr/include/linux/types.h \
@@ -39,7 +39,7 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
   /data/data/com.termux/files/usr/include/aarch64-linux-android/asm/posix_types.h \
   /data/data/com.termux/files/usr/include/asm-generic/posix_types.h \
   /data/data/com.termux/files/usr/include/bits/pthread_types.h \
-  /data/data/com.termux/files/usr/lib/clang/14.0.3/include/stdarg.h \
+  /data/data/com.termux/files/usr/lib/clang/14.0.4/include/stdarg.h \
   /data/data/com.termux/files/usr/include/c++/v1/string.h \
   /data/data/com.termux/files/usr/include/string.h \
   /data/data/com.termux/files/usr/include/xlocale.h \
@@ -60,10 +60,10 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
   /data/data/com.termux/files/usr/include/aarch64-linux-android/asm/sve_context.h \
   /data/data/com.termux/files/usr/include/bits/signal_types.h \
   /data/data/com.termux/files/usr/include/c++/v1/limits.h \
-  /data/data/com.termux/files/usr/lib/clang/14.0.3/include/limits.h \
+  /data/data/com.termux/files/usr/lib/clang/14.0.4/include/limits.h \
   /data/data/com.termux/files/usr/include/limits.h \
   /data/data/com.termux/files/usr/include/c++/v1/float.h \
-  /data/data/com.termux/files/usr/lib/clang/14.0.3/include/float.h \
+  /data/data/com.termux/files/usr/lib/clang/14.0.4/include/float.h \
   /data/data/com.termux/files/usr/include/linux/limits.h \
   /data/data/com.termux/files/usr/include/bits/posix_limits.h \
   /data/data/com.termux/files/usr/include/linux/signal.h \
@@ -154,15 +154,8 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
   /data/data/com.termux/files/usr/include/c++/v1/cstdarg \
   /data/data/com.termux/files/usr/include/c++/v1/__bsd_locale_fallbacks.h \
   /data/data/com.termux/files/usr/include/c++/v1/bitset \
-  /data/data/com.termux/files/usr/include/c++/v1/__bit_reference \
-  /data/data/com.termux/files/usr/include/c++/v1/queue \
-  /data/data/com.termux/files/usr/include/c++/v1/deque \
-  /data/data/com.termux/files/usr/include/c++/v1/__split_buffer \
-  /data/data/com.termux/files/usr/include/c++/v1/vector \
-  /data/data/com.termux/files/usr/include/memory.h
+  /data/data/com.termux/files/usr/include/c++/v1/__bit_reference
 
-
-/data/data/com.termux/files/usr/include/memory.h:
 
 /data/data/com.termux/files/usr/include/c++/v1/istream:
 
@@ -182,8 +175,6 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 
 /data/data/com.termux/files/usr/include/ctype.h:
 
-/data/data/com.termux/files/usr/include/c++/v1/cctype:
-
 /data/data/com.termux/files/usr/include/c++/v1/cwctype:
 
 /data/data/com.termux/files/usr/include/c++/v1/cstdio:
@@ -193,8 +184,6 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 /data/data/com.termux/files/usr/include/semaphore.h:
 
 /data/data/com.termux/files/usr/include/linux/sched.h:
-
-/data/data/com.termux/files/usr/include/c++/v1/queue:
 
 /data/data/com.termux/files/usr/include/c++/v1/cstdarg:
 
@@ -280,25 +269,15 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 
 /data/data/com.termux/files/usr/include/c++/v1/__locale:
 
-/data/data/com.termux/files/usr/include/bits/signal_types.h:
-
-/data/data/com.termux/files/usr/include/bits/mbstate_t.h:
-
 /data/data/com.termux/files/usr/include/c++/v1/bit:
 
 /data/data/com.termux/files/usr/include/c++/v1/errno.h:
 
 /data/data/com.termux/files/usr/include/c++/v1/algorithm:
 
-/data/data/com.termux/files/usr/lib/clang/14.0.3/include/stdint.h:
-
 /data/data/com.termux/files/usr/include/bits/seek_constants.h:
 
 /data/data/com.termux/files/usr/include/android/legacy_signal_inlines.h:
-
-/data/data/com.termux/files/usr/include/aarch64-linux-android/asm/sve_context.h:
-
-/data/data/com.termux/files/usr/include/sys/user.h:
 
 /data/data/com.termux/files/usr/include/asm-generic/signal-defs.h:
 
@@ -312,15 +291,27 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 
 /data/data/com.termux/files/usr/include/c++/v1/bitset:
 
+/data/data/com.termux/files/usr/lib/clang/14.0.4/include/stdarg.h:
+
 /data/data/com.termux/files/usr/include/linux/limits.h:
 
-/data/data/com.termux/files/usr/include/bits/timespec.h:
+/data/data/com.termux/files/usr/include/aarch64-linux-android/asm/sve_context.h:
+
+/data/data/com.termux/files/usr/include/sys/user.h:
+
+/data/data/com.termux/files/usr/lib/clang/14.0.4/include/float.h:
 
 /data/data/com.termux/files/usr/include/limits.h:
 
-/data/data/com.termux/files/usr/include/aarch64-linux-android/asm/sigcontext.h:
+/data/data/com.termux/files/usr/include/bits/signal_types.h:
 
-/data/data/com.termux/files/usr/lib/clang/14.0.3/include/float.h:
+/data/data/com.termux/files/usr/include/bits/mbstate_t.h:
+
+/data/data/com.termux/files/usr/include/c++/v1/cctype:
+
+/data/data/com.termux/files/usr/lib/clang/14.0.4/include/limits.h:
+
+/data/data/com.termux/files/usr/include/aarch64-linux-android/asm/sigcontext.h:
 
 /data/data/com.termux/files/usr/include/signal.h:
 
@@ -370,13 +361,11 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 
 /data/data/com.termux/files/usr/include/bits/strcasecmp.h:
 
+/data/data/com.termux/files/usr/include/asm-generic/posix_types.h:
+
 /data/data/com.termux/files/usr/include/asm-generic/errno.h:
 
 /data/data/com.termux/files/usr/include/linux/compiler.h:
-
-/data/data/com.termux/files/usr/lib/clang/14.0.3/include/stdarg.h:
-
-/data/data/com.termux/files/usr/include/asm-generic/posix_types.h:
 
 /data/data/com.termux/files/usr/include/linux/signal.h:
 
@@ -402,15 +391,13 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 
 /data/data/com.termux/files/usr/include/aarch64-linux-android/asm/types.h:
 
-/data/data/com.termux/files/usr/lib/clang/14.0.3/include/limits.h:
+/data/data/com.termux/files/usr/include/c++/v1/ios:
 
-/data/data/com.termux/files/usr/include/linux/types.h:
+/data/data/com.termux/files/usr/include/c++/v1/stddef.h:
 
-/data/data/com.termux/files/usr/lib/clang/14.0.3/include/__stddef_max_align_t.h:
+/data/data/com.termux/files/usr/include/stdio.h:
 
-/data/data/com.termux/files/usr/include/aarch64-linux-android/asm/posix_types.h:
-
-/data/data/com.termux/files/usr/lib/clang/14.0.3/include/stddef.h:
+/data/data/com.termux/files/usr/lib/clang/14.0.4/include/__stddef_max_align_t.h:
 
 /data/data/com.termux/files/usr/include/string.h:
 
@@ -418,21 +405,11 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 
 /data/data/com.termux/files/usr/include/sys/types.h:
 
-/data/data/com.termux/files/usr/include/c++/v1/vector:
-
 /data/data/com.termux/files/usr/include/linux/time.h:
 
 /data/data/com.termux/files/usr/include/c++/v1/__nullptr:
 
 /data/data/com.termux/files/usr/include/features.h:
-
-/data/data/com.termux/files/usr/include/c++/v1/ios:
-
-/data/data/com.termux/files/usr/include/c++/v1/stddef.h:
-
-/data/data/com.termux/files/usr/include/stdio.h:
-
-/data/data/com.termux/files/usr/include/c++/v1/__split_buffer:
 
 /data/data/com.termux/files/usr/include/bits/wchar_limits.h:
 
@@ -440,11 +417,21 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 
 /data/data/com.termux/files/usr/include/c++/v1/__string:
 
+/data/data/com.termux/files/usr/lib/clang/14.0.4/include/stdint.h:
+
 /data/data/com.termux/files/usr/include/wchar.h:
+
+/data/data/com.termux/files/usr/include/aarch64-linux-android/asm/posix_types.h:
 
 /data/data/com.termux/files/usr/include/sys/ucontext.h:
 
 /data/data/com.termux/files/usr/include/c++/v1/wchar.h:
+
+/data/data/com.termux/files/usr/include/bits/timespec.h:
+
+/data/data/com.termux/files/usr/lib/clang/14.0.4/include/stddef.h:
+
+/data/data/com.termux/files/usr/include/linux/types.h:
 
 /data/data/com.termux/files/usr/include/aarch64-linux-android/asm/errno.h:
 
@@ -453,8 +440,6 @@ CMakeFiles/Test.dir/test.cpp.o: ../test.cpp \
 /data/data/com.termux/files/usr/include/android/api-level.h:
 
 /data/data/com.termux/files/usr/include/asm-generic/siginfo.h:
-
-/data/data/com.termux/files/usr/include/c++/v1/deque:
 
 /data/data/com.termux/files/usr/include/c++/v1/__bsd_locale_fallbacks.h:
 
