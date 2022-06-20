@@ -1,49 +1,74 @@
 #include <iostream>
-#include <queue>
+#include <vector>
 
 using namespace std;
 
-class pos{
-	public :
-	int s,g;
-};
+int parent[51];
 
-int GRID[101][101];
-int N,M;
-queue<pos> q;
+vector<vector<int>> v(51);
+vector<int> Truth;
+
+int Find_parent(int a){
+	if(parent[a] == a) return a;
+	else{ 
+		int b = Find_parent(parent[a]);	
+		parent[a] = b;
+		return b;
+	}
+}
+
+void Union(int a, int b){
+	a = Find_parent(a);
+	b = Find_parent(b);
+
+	if(a!=b){
+		parent[b] = a;
+	}
+}
 
 int main(){
 	ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-	cin >> N >> M;
-	for(int i=0; i<N; i++){
-		for(int j=0; j<M; j++){
-			char a;
-			cin >> a;
-			GRID[i][j] = a-'0';
+	int N,M,T;
+	cin >> N >> M >> T;
+	
+	for(int i = 0; i<T; i++){
+		int t;
+		cin >> t;
+		Truth.push_back(t);
+	}
+
+	for(int i = 1; i<N; i++){
+		parent[i] = i;
+	}
+
+	for(int i=0; i<M; i++){
+		int P;
+		cin >> P;
+
+		int n,p;
+		for(int j=0; j<P; j++){
+			if(j >= 1){
+				p=n;
+				cin >> n;
+				Union(p, n);
+			}
+			else cin >> n;
+			v[i].push_back(n);
 		}
 	}
 
-	q.push({0,0});
-	GRID[0][0] = 2;
-
-	int ds[4] = {-1,1,0,0};
-	int dg[4] = {0,0,-1,1};
-
-	while(!q.empty()){
-		pos c = q.front();
-		q.pop();
-		if(c.s == N-1 && c.g == M-1) break;
-		for(int i=0; i<4; i++){
-			pos n = {c.s+ds[i], c.g+dg[i]};
-			if(n.s >= 0 && n.g >=0 && n.s<N && n.g <M){
-				if(GRID[n.s][n.g]== 1){
-					GRID[n.s][n.g] = GRID[c.s][c.g]+1;
-					q.push(n);
+	for(auto& list : v){
+		bool able = false;
+		for(auto& person : list){
+			if(able) break;
+			for(auto& t : Truth){
+				if(Find_parent(person)==Find_parent(t)){
+					able = true;
+					break;
 				}
 			}
+		if(able) M--;
 		}
 	}
-
-	cout << GRID[N-1][M-1] -1 << '\n';
-
+	cout << M << '\n';
 }
