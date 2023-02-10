@@ -51,7 +51,7 @@ int main()
         int l = N-1; // 3
         long target = v[i]; // ! 숫자 짱클수도 있다
 
-        while(f<l){ // 4
+        while(f<l){ // 4 
             if(v[f]+v[l] == target){
                 if(f != i && l != i){
                     cnt++; 
