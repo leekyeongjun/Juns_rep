@@ -23,8 +23,10 @@ int main(){
     cin >> N >> M;
 
     nodes.resize(N+1);
-    visited.resize(N+1, false);
-    minDist.resize(N+1, INT_MAX);
+    visited.resize(N+1);
+    fill(visited.begin(), visited.end(), false);
+    minDist.resize(N+1);
+    fill(minDist.begin(), minDist.end(), INT_MAX);
     
     
 
@@ -32,10 +34,7 @@ int main(){
     for(int i = 0; i<M; i++){
         int u,v,w;
         cin >> u >> v >> w;
-        node buf;
-        buf.destination = v;
-        buf.weight = w;
-        nodes[u].push_back(buf);
+        nodes[u].push_back({v,w});
     }
 
 
@@ -49,10 +48,10 @@ int main(){
         pq.pop();
         int curnodeId = cur.second;
         if(curnodeId == e) break;
-        visited[curnodeId] = true;
-
-        for(auto i : nodes[curnodeId]){
-            if(!visited[i.destination]){
+        
+        if(!visited[curnodeId]){
+            visited[curnodeId] = true;
+            for(auto i : nodes[curnodeId]){ 
                 minDist[i.destination] = min(minDist[i.destination], minDist[curnodeId]+i.weight);
                 pq.push({minDist[i.destination], i.destination});
             }
