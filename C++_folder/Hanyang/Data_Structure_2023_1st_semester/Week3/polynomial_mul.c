@@ -119,7 +119,6 @@ void addTerm(poly* A, int exp, int coeff) {
         preTerm = curTerm;
         curTerm = curTerm->nextNode;
     }
-
     if(curTerm == NULL && preTerm == NULL){
         //printf("식에 항이 없으므로 첫번째 항으로 취급합니다.\n");
         A->headNode.nextNode = newTerm;
