@@ -1,0 +1,30 @@
+[On Main Course] = ★ 
+[On Practice Course] = ☆ 
+
+
+[O] BT COPY                     ★
+[O] BT Testing Equality         ★
+[ ] BT Satisfiability           ★
+[ ] TBT Inorder Traversal       ★
+[ ] TBT Insertion               ★
+[O] BST Search (Recursion)      ★
+[ ] BST Search (iteration)      ★
+[ ] BST Delete                  ★
+[ ] MAXHEAP Push                ★☆
+[ ] MAXHEAP Delete              ★☆
+[ ] SPARSE MATRIX Insert        ☆
+[ ] SPARSE MATRIX transpose     ☆
+[ ] SPARSE MATRIX matMul        ☆
+[ ] AVLTREE Insertion           ★☆
+[ ] AVLTREE Rotation            ★☆
+[ ] BTREE Insertion             ★☆
+[ ] HASH Linear probing         ☆
+[ ] HASH Chaining               ★☆
+[ ] MERGE Sort                  ★
+[ ] QUICK Sort                  ★
+[ ] RADIX Sort                  ★
+[ ] BFS                         ★☆
+[ ] DFS                         ★☆
+[ ] Prim Algorithm              ★☆
+[ ] Kruskal Algorithm           ★
+[ ] DijkStra                    ★
