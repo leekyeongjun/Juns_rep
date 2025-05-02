@@ -1,0 +1,198 @@
+@import url('https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+
+@font-face {
+    font-family: 'HOLbold';
+    src: url('https://leekyeongjun.github.io/Tataro/PHP/Fonts/HeirofLightBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HOLreg';
+    src : url('https://leekyeongjun.github.io/Tataro/PHP/Fonts/HeirofLightRegular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.tarot-data {
+    white-space: pre-wrap; /* JSON 데이터를 보기 좋게 출력하기 위해 */
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'HOLreg';
+    color: #FFF0C1;
+    background-color:#2D2E30
+}
+
+.Bigtitle{
+
+    height: 5vh;
+    text-align: center;
+    position: sticky;
+    top: 0; /* Bigtitle 상단 고정 */
+    z-index: 2;
+
+    font-family: 'HOLbold';
+    background-color:#1b1c1d;
+    font-size: 3vh;
+    border-bottom:solid #FFF0C1 1px;
+}
+
+/* SearchBar 설정 변경 */
+.SearchBar{
+
+    height: 5vh;
+    text-align: center;
+    position: sticky;
+    top: 0; /* Bigtitle 상단 고정 */
+    z-index: 2;
+
+    font-family: 'HOLreg';
+    font-size: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color:#1b1c1d;
+}
+
+
+.MainArea{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.CardArea {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 10px; 
+    padding-bottom: 5vh; /* Wrapper와의 간격을 주기 위해 */
+}
+
+.CardBtn {
+    width: 100%;
+    padding-top: 150%; 
+    position: relative;
+}
+
+.CardContent {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid black;
+}
+
+.wrapper{
+
+    height: 5vh;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 2;
+    background: white;
+    bottom: 0; /* 하단에서 0의 위치에 배치 */
+    border-top:solid #FFF0C1 1px;
+    background-color:#1b1c1d;
+    display: flex;
+    justify-content: center;
+}
+
+/*===================================================================*/
+.MainDescription {
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 자식 요소들을 가로축 중앙에 정렬 */
+    overflow-y: auto;
+    width: 100%; /* 필요에 따라 설정 */
+}
+
+.Imageblock {
+    
+    max-width: 200px; /* 최대 너비 */
+    max-height: 300px; /* 최대 높이 */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3; /* 1:1.5 비율을 유지 */
+    background-color: #f0f0f0; /* 배경색은 예시로, 필요에 따라 조정 */
+    margin: auto;
+    margin-top : 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #FFF0C1 4px;
+}
+
+.Nameblock{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-family: 'HOLbold';
+    font-size: 4vh;
+}
+.ContentBlock{
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.ContentTitle{
+    width:100%;
+    margin : 2%;
+    margin-bottom: 0%;
+    margin-left:5%;
+    font-family: 'HOLbold';
+    font-size: 3vh;
+}
+.Content{
+    width: 90%;
+    margin: 2%;
+    padding: 2%;
+    margin-right: 3%;
+    border: solid #FFF0C1 1px;
+    background-color: #FFF0C1;
+    color: #2D2E30;
+    font-family: 'HOLreg';
+    text-align: center;
+}
+
+.bold-text{
+    font-family: 'HOLbold';
+    font-size: larger;
+    padding-bottom: 1px;
+    border-bottom: #2D2E30 solid 1px;
+}
+
+i{
+    margin : 1%;
+}
+
+.Homebtn{
+    font-family: 'HOLreg';
+    margin: 1%;
+    width: 15vh;
+    background-color: #FFF0C1;
+    color: #2D2E30;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="kt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarot Data Viewer</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://leekyeongjun.github.io/Tataro/CSS/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="../CSS/style.css">-->
+</head>     
+
+<body>
+    <div class = "Bigtitle">
+        타로 백과사전 by 이웃집 타타로
+    </div>
+    <div class = "SearchBar">
+        <label for ="categorySelect" class="Checkboxes" onchange="displayCardsByCategory(this.value)">
+            <input type="checkbox" id="Major" name="Major"> 메이저 아르카나
+            <input type="checkbox" id="Sword" name="Sword"> 소드
+            <input type="checkbox" id="Cup" name="Cup"> 컵
+            <input type="checkbox" id="Pentacle" name="Pentacle"> 펜타클
+            <input type="checkbox" id="Wand" name="Wand"> 완드
+        </label>
+    </div>
+    <div class = "MainArea">
+        <div class = "CardArea" id = "cardDisplay"> </div>
+    </div>
+    <div class = "wrapper">
+
+    </div>
+
+    <!--<script src = "JS/script.js"></script>-->
+    <script src="https://leekyeongjun.github.io/Tataro/PHP/JS/script.js?var=1"></script>
+</body>
+</html>
